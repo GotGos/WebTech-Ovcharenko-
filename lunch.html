@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Собрать ланч — БизнесПанч</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lunch.css">
+<link rel="stylesheet" href="print.css" media="print">
+</head>
+<body>
+
+  <header>
+    <h1><a href="site.html">Бизнес<span>Панч</span></a></h1>
+    <nav>
+      <a href="site.html">Главная</a>
+      <a href="lunch.html" class="active">Собрать ланч</a>
+      <a href="site.html#about">О компании</a>
+      <a href="feedback.html">Обратная связь</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <input type="radio" class="choice" id="soup-none" name="soup" value="" form="order-form" aria-label="Без супа" checked>
+    <input type="radio" class="choice" id="soup-1" name="soup" value="Крем-суп из тыквы" form="order-form" aria-label="Крем-суп из тыквы">
+    <input type="radio" class="choice" id="soup-2" name="soup" value="Борщ с говядиной" form="order-form" aria-label="Борщ с говядиной">
+    <input type="radio" class="choice" id="soup-3" name="soup" value="Куриный суп с домашней лапшой" form="order-form" aria-label="Куриный суп с домашней лапшой">
+    <input type="radio" class="choice" id="main-none" name="main_dish" value="" form="order-form" aria-label="Без главного блюда" checked>
+    <input type="radio" class="choice" id="main-1" name="main_dish" value="Куриная котлета с гречкой" form="order-form" aria-label="Куриная котлета с гречкой">
+    <input type="radio" class="choice" id="main-2" name="main_dish" value="Плов с говядиной" form="order-form" aria-label="Плов с говядиной">
+    <input type="radio" class="choice" id="main-3" name="main_dish" value="Паста с лососем и шпинатом" form="order-form" aria-label="Паста с лососем и шпинатом">
+    <input type="radio" class="choice" id="drink-none" name="drink" value="" form="order-form" aria-label="Без напитка" checked>
+    <input type="radio" class="choice" id="drink-1" name="drink" value="Апельсиновый сок" form="order-form" aria-label="Апельсиновый сок">
+    <input type="radio" class="choice" id="drink-2" name="drink" value="Яблочный сок" form="order-form" aria-label="Яблочный сок">
+    <input type="radio" class="choice" id="drink-3" name="drink" value="Морковный сок" form="order-form" aria-label="Морковный сок">
+
+    <section class="dish-section" id="soups">
+      <h2>Выберите суп</h2>
+      <div class="dishes-grid">
+        <div class="dish">
+          <img src="images/pumpkin-soup.jpeg" alt="Тарелка тыквенного крем-супа" width="600" height="600">
+          <p class="dish-price">210 ₽</p>
+          <p class="dish-name">Крем-суп из тыквы</p>
+          <p class="dish-weight">300 г</p>
+          <label class="dish-button" for="soup-1"><span class="add">Добавить</span><span class="added">Выбрано ✓</span></label>
+        </div>
+        <div class="dish">
+          <img src="images/borch.jpeg" alt="Тарелка борща со сметаной" width="600" height="600">
+          <p class="dish-price">240 ₽</p>
+          <p class="dish-name">Борщ с говядиной</p>
+          <p class="dish-weight">300 г</p>
+          <label class="dish-button" for="soup-2"><span class="add">Добавить</span><span class="added">Выбрано ✓</span></label>
+        </div>
+        <div class="dish">
+          <img src="images/soup-chiken.jpeg" alt="Тарелка куриного супа с лапшой" width="600" height="600">
+          <p class="dish-price">190 ₽</p>
+          <p class="dish-name">Куриный суп с домашней лапшой</p>
+          <p class="dish-weight">300 г</p>
+          <label class="dish-button" for="soup-3"><span class="add">Добавить</span><span class="added">Выбрано ✓</span></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="dish-section" id="mains">
+      <h2>Выберите главное блюдо</h2>
+      <div class="dishes-grid">
+        <div class="dish">
+          <img src="images/kotleti-s-grechkoi.jpeg" alt="Куриная котлета с гречневой кашей" width="600" height="600">
+          <p class="dish-price">320 ₽</p>
+          <p class="dish-name">Куриная котлета с гречкой</p>
+          <p class="dish-weight">250 г</p>
+          <label class="dish-button" for="main-1"><span class="add">Добавить</span><span class="added">Выбрано ✓</span></label>
+        </div>
+        <div class="dish">
+          <img src="images/plov-s-goviadinoi.jpeg" alt="Тарелка плова с говядиной" width="600" height="600">
+          <p class="dish-price">350 ₽</p>
+          <p class="dish-name">Плов с говядиной</p>
+          <p class="dish-weight">300 г</p>
+          <label class="dish-button" for="main-2"><span class="add">Добавить</span><span class="added">Выбрано ✓</span></label>
+        </div>
+        <div class="dish">
+          <img src="images/losos-i-shpinat.jpeg" alt="Паста с кусочками лосося и шпинатом" width="600" height="600">
+          <p class="dish-price">390 ₽</p>
+          <p class="dish-name">Паста с лососем и шпинатом</p>
+          <p class="dish-weight">280 г</p>
+          <label class="dish-button" for="main-3"><span class="add">Добавить</span><span class="added">Выбрано ✓</span></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="dish-section" id="drinks">
+      <h2>Выберите напиток</h2>
+      <div class="dishes-grid">
+        <div class="dish">
+          <img src="images/orange-sok.jpeg" alt="Стакан апельсинового сока" width="600" height="600">
+          <p class="dish-price">120 ₽</p>
+          <p class="dish-name">Апельсиновый сок</p>
+          <p class="dish-weight">300 мл</p>
+          <label class="dish-button" for="drink-1"><span class="add">Добавить</span><span class="added">Выбрано ✓</span></label>
+        </div>
+        <div class="dish">
+          <img src="images/drink-apple.jpeg" alt="Стакан яблочного сока" width="600" height="600">
+          <p class="dish-price">90 ₽</p>
+          <p class="dish-name">Яблочный сок</p>
+          <p class="dish-weight">300 мл</p>
+          <label class="dish-button" for="drink-2"><span class="add">Добавить</span><span class="added">Выбрано ✓</span></label>
+        </div>
+        <div class="dish">
+          <img src="images/drink-carrot.jpeg" alt="Стакан морковного сока" width="600" height="600">
+          <p class="dish-price">110 ₽</p>
+          <p class="dish-name">Морковный сок</p>
+          <p class="dish-weight">300 мл</p>
+          <label class="dish-button" for="drink-3"><span class="add">Добавить</span><span class="added">Выбрано ✓</span></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="order" id="order">
+      <h2>Сделать заказ</h2>
+
+      <form class="order-form" id="order-form" action="https://httpbin.org/post" method="POST">
+        <div class="order-columns">
+
+          <div class="order-col">
+            <h3>Ваш заказ</h3>
+
+            <div class="summary">
+              <div class="pick-group">
+                <span class="pick-title">Суп</span>
+                <p class="pick-empty empty-soup">Не выбран. Нажмите «Добавить» в меню.</p>
+                <p class="pick pick-soup-1"><span>Крем-суп из тыквы — 210 ₽</span><label class="remove" for="soup-none">Убрать</label></p>
+                <p class="pick pick-soup-2"><span>Борщ с говядиной — 240 ₽</span><label class="remove" for="soup-none">Убрать</label></p>
+                <p class="pick pick-soup-3"><span>Куриный суп с домашней лапшой — 190 ₽</span><label class="remove" for="soup-none">Убрать</label></p>
+              </div>
+              <div class="pick-group">
+                <span class="pick-title">Главное блюдо</span>
+                <p class="pick-empty empty-main">Не выбран. Нажмите «Добавить» в меню.</p>
+                <p class="pick pick-main-1"><span>Куриная котлета с гречкой — 320 ₽</span><label class="remove" for="main-none">Убрать</label></p>
+                <p class="pick pick-main-2"><span>Плов с говядиной — 350 ₽</span><label class="remove" for="main-none">Убрать</label></p>
+                <p class="pick pick-main-3"><span>Паста с лососем и шпинатом — 390 ₽</span><label class="remove" for="main-none">Убрать</label></p>
+              </div>
+              <div class="pick-group">
+                <span class="pick-title">Напиток</span>
+                <p class="pick-empty empty-drink">Не выбран. Нажмите «Добавить» в меню.</p>
+                <p class="pick pick-drink-1"><span>Апельсиновый сок — 120 ₽</span><label class="remove" for="drink-none">Убрать</label></p>
+                <p class="pick pick-drink-2"><span>Яблочный сок — 90 ₽</span><label class="remove" for="drink-none">Убрать</label></p>
+                <p class="pick pick-drink-3"><span>Морковный сок — 110 ₽</span><label class="remove" for="drink-none">Убрать</label></p>
+              </div>
+              <p class="summary-total">Итого: <span class="total-sum"></span></p>
+            </div>
+
+            <div class="field">
+              <label for="comment">Комментарии к заказу</label>
+              <textarea id="comment" name="comment" rows="6"></textarea>
+            </div>
+          </div>
+
+          <div class="order-col">
+            <h3>Ваши данные</h3>
+
+            <div class="field">
+              <label for="name">Имя</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <label class="checkbox-option">
+              <input type="checkbox" name="promo" value="yes" checked>
+              Получать информацию о скидках и акциях
+            </label>
+
+            <div class="field">
+              <label for="phone">Номер телефона</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="field">
+              <label for="address">Адрес доставки</label>
+              <input type="text" id="address" name="address" required>
+              <p class="hint">Доставка осуществляется только по Москве</p>
+            </div>
+
+            <fieldset class="field">
+              <legend>Время доставки:</legend>
+              <label class="radio-option"><input type="radio" name="delivery" value="asap" checked>Как можно скорее</label>
+              <label class="radio-option"><input type="radio" name="delivery" value="scheduled">К указанному времени</label>
+            </fieldset>
+
+            <div class="field">
+              <label for="delivery-time">Укажите время доставки</label>
+              <input type="time" id="delivery-time" name="delivery_time" min="09:00" max="16:00">
+              <p class="hint">Доступное время доставки с 9:00 до 16:00</p>
+            </div>
+
+            <div class="form-buttons">
+              <button type="reset" class="btn btn-reset">Сбросить</button>
+              <button type="submit" class="btn btn-submit">Отправить</button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer id="contacts">
+    <div>
+      <h2>Контакты</h2>
+      <p>ООО «БизнесПанч», г. Москва, ул. Пятницкая, д. 12</p>
+      <p>Ежедневно с 9:00 до 16:00, доставка по будням</p>
+    </div>
+    <div>
+      <h2>Связаться</h2>
+      <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+      <p><a href="mailto:order@businesspunch.ru">order@businesspunch.ru</a></p>
+      <p><a href="feedback.html">Обратная связь</a></p>
+      <p><a href="login.html">Вход для сотрудников</a></p>
+    </div>
+    <p class="footer-copy">© 2026 БизнесПанч. Все права защищены.</p>
+  </footer>
+
+</body>
+</html>

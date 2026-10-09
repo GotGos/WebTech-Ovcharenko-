@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вход — БизнесПанч</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="auth.css">
+<link rel="stylesheet" href="print.css" media="print">
+</head>
+<body>
+
+  <div class="auth-screen">
+    <div class="auth-overlay"></div>
+
+    <main class="auth-card">
+      <h1>Бизнес<span>Панч</span></h1>
+      <p class="auth-subtitle">Вход для сотрудников и партнёров</p>
+
+      <form class="auth-form" action="https://httpbin.org/post" method="POST">
+
+        <div class="form-row">
+          <label for="login">Логин</label>
+          <input type="text" id="login" name="login" placeholder="Введите логин" required>
+        </div>
+
+        <div class="form-row">
+          <label for="password">Пароль</label>
+          <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+        </div>
+
+        <div class="form-row form-row--checkbox">
+          <label class="checkbox-option">
+            <input type="checkbox" id="remember" name="remember" value="yes">
+            Запомнить меня
+          </label>
+        </div>
+
+        <button type="submit" class="auth-cta">Войти</button>
+
+      </form>
+
+      <a class="auth-back" href="site.html">← Вернуться на сайт</a>
+    </main>
+  </div>
+
+</body>
+</html>

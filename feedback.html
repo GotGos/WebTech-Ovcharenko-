@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Обратная связь — БизнесПанч</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="print.css" media="print">
+</head>
+<body>
+
+  <header>
+    <h1><a href="site.html">Бизнес<span>Панч</span></a></h1>
+    <nav>
+      <a href="site.html">Главная</a>
+      <a href="lunch.html">Собрать ланч</a>
+      <a href="site.html#about">О компании</a>
+      <a href="feedback.html" class="active">Обратная связь</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <div class="page-head">
+    <h2>Обратная связь</h2>
+    <p>Есть вопрос по заказу, жалоба или идея, как нам стать лучше? Напишите — ответим в течение рабочего дня.</p>
+  </div>
+
+  <div class="layout">
+
+    <main class="content">
+      <div class="card feedback-card" id="feedback">
+
+        <form class="feedback-form" action="https://httpbin.org/post" method="POST" enctype="multipart/form-data">
+
+          <div class="form-row">
+            <label for="fio">ФИО</label>
+            <input type="text" id="fio" name="fio" placeholder="Иванова Мария Сергеевна" required>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="mail@example.ru" required>
+          </div>
+
+          <fieldset class="form-row">
+            <legend>Откуда узнали о нас</legend>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="source" value="search" checked>Поисковики</label>
+              <label class="radio-option"><input type="radio" name="source" value="social">Соцсети</label>
+              <label class="radio-option"><input type="radio" name="source" value="friends">От друзей и коллег</label>
+              <label class="radio-option"><input type="radio" name="source" value="ads">Реклама</label>
+              <label class="radio-option"><input type="radio" name="source" value="other">Другое</label>
+            </div>
+          </fieldset>
+
+          <div class="form-row">
+            <label for="type">Тип обращения</label>
+            <select id="type" name="type">
+              <option value="complaint">Жалоба</option>
+              <option value="suggestion">Предложение</option>
+              <option value="question">Вопрос</option>
+            </select>
+          </div>
+
+          <div class="form-row form-row--wide">
+            <label for="message">Текст сообщения</label>
+            <textarea id="message" name="message" rows="6" placeholder="Опишите ситуацию подробнее" required></textarea>
+          </div>
+
+          <div class="form-row">
+            <label for="attachment">Вложения</label>
+            <input type="file" id="attachment" name="attachment">
+          </div>
+
+          <div class="form-row form-row--checkbox">
+            <label class="checkbox-option">
+              <input type="checkbox" id="consent" name="consent" required>
+              Даю согласие на обработку персональных данных
+            </label>
+          </div>
+
+          <button type="submit" class="hero-cta">Отправить сообщение</button>
+
+        </form>
+
+        <p class="print-only">Форма обратной связи доступна на сайте. Напишите нам по адресу order@businesspunch.ru или позвоните: +7 (495) 123-45-67.</p>
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="card">
+        <h3>Быстрая связь</h3>
+        <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+        <p><a href="mailto:order@businesspunch.ru">order@businesspunch.ru</a></p>
+        <p class="muted">Ежедневно с 9:00 до 16:00</p>
+      </div>
+
+      <div class="card">
+        <h3>Частые вопросы</h3>
+        <ul class="faq">
+          <li><strong>Где мой заказ?</strong>Позвоните по телефону — курьер ответит, где вы в очереди.</li>
+          <li><strong>Можно ли заказать на весь офис?</strong>Да, работаем по счёту с юрлицами и делаем регулярные заказы.</li>
+          <li><strong>Есть ли постное меню?</strong>Да, вегетарианские и постные блюда есть каждый день.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Хотите заказать?</h3>
+        <p>Соберите ланч на странице меню — это быстрее, чем писать нам.</p>
+        <p><a href="lunch.html">Перейти к меню</a></p>
+      </div>
+    </aside>
+
+  </div>
+
+  <footer id="contacts">
+    <div>
+      <h2>Контакты</h2>
+      <p>ООО «БизнесПанч», г. Москва, ул. Пятницкая, д. 12</p>
+      <p>Ежедневно с 9:00 до 16:00, доставка по будням</p>
+    </div>
+    <div>
+      <h2>Связаться</h2>
+      <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+      <p><a href="mailto:order@businesspunch.ru">order@businesspunch.ru</a></p>
+      <p><a href="login.html">Вход для сотрудников</a></p>
+    </div>
+    <p class="footer-copy">© 2026 БизнесПанч. Все права защищены.</p>
+  </footer>
+
+</body>
+</html>
