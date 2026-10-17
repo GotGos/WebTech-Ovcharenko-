@@ -1,13 +1,5 @@
-main {
-    position: relative;
-}
-
-.choice {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    pointer-events: none;
+[hidden] {
+    display: none !important;
 }
 
 .dish-section {
@@ -27,6 +19,11 @@ main {
     border-radius: 35px;
     background-color: #FFFFFF;
     filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+}
+
+.dish:hover,
+.dish.is-selected {
+    outline: 3px solid tomato;
 }
 
 .dish img {
@@ -60,6 +57,9 @@ main {
     padding: 10px 30px;
     border-radius: 10px;
     background-color: #F1EEE9;
+    border: none;
+    font: inherit;
+    color: inherit;
     text-align: center;
     cursor: pointer;
 }
@@ -72,40 +72,16 @@ main {
     display: none;
 }
 
-#soup-1:checked ~ .dish-section [for="soup-1"],
-#soup-2:checked ~ .dish-section [for="soup-2"],
-#soup-3:checked ~ .dish-section [for="soup-3"],
-#main-1:checked ~ .dish-section [for="main-1"],
-#main-2:checked ~ .dish-section [for="main-2"],
-#main-3:checked ~ .dish-section [for="main-3"],
-#drink-1:checked ~ .dish-section [for="drink-1"],
-#drink-2:checked ~ .dish-section [for="drink-2"],
-#drink-3:checked ~ .dish-section [for="drink-3"] {
+.dish-button.is-selected {
     background-color: #222222;
     color: #FFFFFF;
 }
 
-#soup-1:checked ~ .dish-section [for="soup-1"] .add,
-#soup-2:checked ~ .dish-section [for="soup-2"] .add,
-#soup-3:checked ~ .dish-section [for="soup-3"] .add,
-#main-1:checked ~ .dish-section [for="main-1"] .add,
-#main-2:checked ~ .dish-section [for="main-2"] .add,
-#main-3:checked ~ .dish-section [for="main-3"] .add,
-#drink-1:checked ~ .dish-section [for="drink-1"] .add,
-#drink-2:checked ~ .dish-section [for="drink-2"] .add,
-#drink-3:checked ~ .dish-section [for="drink-3"] .add {
+.dish-button.is-selected .add {
     display: none;
 }
 
-#soup-1:checked ~ .dish-section [for="soup-1"] .added,
-#soup-2:checked ~ .dish-section [for="soup-2"] .added,
-#soup-3:checked ~ .dish-section [for="soup-3"] .added,
-#main-1:checked ~ .dish-section [for="main-1"] .added,
-#main-2:checked ~ .dish-section [for="main-2"] .added,
-#main-3:checked ~ .dish-section [for="main-3"] .added,
-#drink-1:checked ~ .dish-section [for="drink-1"] .added,
-#drink-2:checked ~ .dish-section [for="drink-2"] .added,
-#drink-3:checked ~ .dish-section [for="drink-3"] .added {
+.dish-button.is-selected .added {
     display: inline;
 }
 
@@ -113,7 +89,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    counter-reset: total;
 }
 
 .pick-group {
@@ -135,7 +110,7 @@ main {
 }
 
 .pick {
-    display: none;
+    display: flex;
     justify-content: space-between;
     gap: 12px;
     background-color: #F1EEE9;
@@ -144,6 +119,10 @@ main {
 .remove {
     font-size: 14px;
     color: #6E6E6E;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: inherit;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -158,61 +137,6 @@ main {
     border-top: 1px solid #DDDDDD;
     font-size: 20px;
     font-weight: 600;
-}
-
-.total-sum::after {
-    content: counter(total) " ₽";
-}
-
-#soup-1:checked ~ .order .pick-soup-1 {
-    display: flex;
-    counter-increment: total 210;
-}
-
-#soup-2:checked ~ .order .pick-soup-2 {
-    display: flex;
-    counter-increment: total 240;
-}
-
-#soup-3:checked ~ .order .pick-soup-3 {
-    display: flex;
-    counter-increment: total 190;
-}
-
-#main-1:checked ~ .order .pick-main-1 {
-    display: flex;
-    counter-increment: total 320;
-}
-
-#main-2:checked ~ .order .pick-main-2 {
-    display: flex;
-    counter-increment: total 350;
-}
-
-#main-3:checked ~ .order .pick-main-3 {
-    display: flex;
-    counter-increment: total 390;
-}
-
-#drink-1:checked ~ .order .pick-drink-1 {
-    display: flex;
-    counter-increment: total 120;
-}
-
-#drink-2:checked ~ .order .pick-drink-2 {
-    display: flex;
-    counter-increment: total 90;
-}
-
-#drink-3:checked ~ .order .pick-drink-3 {
-    display: flex;
-    counter-increment: total 110;
-}
-
-#soup-none:not(:checked) ~ .order .empty-soup,
-#main-none:not(:checked) ~ .order .empty-main,
-#drink-none:not(:checked) ~ .order .empty-drink {
-    display: none;
 }
 
 .order h2 {
