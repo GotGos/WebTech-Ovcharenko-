@@ -9,6 +9,7 @@
   function createDishCard(dish) {
     const card = el('div', 'dish');
     card.dataset.dish = dish.keyword;
+    card.dataset.kind = dish.kind;
 
     const img = el('img');
     img.src = `images/${dish.image}.jpeg`;

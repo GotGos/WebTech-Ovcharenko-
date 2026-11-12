@@ -402,6 +402,39 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 1px solid #222222;
+    background-color: #FFFFFF;
+    color: #222222;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    border-color: tomato;
+    color: #C9381F;
+}
+
+.filter-btn.active {
+    border-color: tomato;
+    background-color: tomato;
+    color: #111111;
+}
+
+.dish[hidden] {
+    display: none;
+}
+
 @media (max-width: 800px) {
     nav {
         flex: 1 1 100%;

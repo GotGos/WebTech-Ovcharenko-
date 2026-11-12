@@ -1,5 +1,5 @@
 (() => {
-  const FIELD_NAMES = { soup: 'soup', main: 'main_dish', drink: 'drink' };
+  const FIELD_NAMES = { soup: 'soup', main: 'main_dish', salad: 'salad', drink: 'drink', dessert: 'dessert' };
 
   const main = document.querySelector('main');
   const form = document.getElementById('order-form');
@@ -7,7 +7,7 @@
   const totalBlock = document.querySelector('.summary-total');
   const totalEl = document.querySelector('.total-sum');
 
-  const selected = { soup: null, main: null, drink: null };
+  const selected = { soup: null, main: null, salad: null, drink: null, dessert: null };
 
   const groups = {};
   document.querySelectorAll('.pick-group').forEach((group) => {
@@ -73,6 +73,57 @@
   form.addEventListener('formdata', (e) => {
     for (const [category, field] of Object.entries(FIELD_NAMES)) {
       e.formData.set(field, selected[category] ? selected[category].keyword : '');
+    }
+  });
+
+  function showNotification(text) {
+    const overlay = document.createElement('div');
+    overlay.className = 'notification-overlay';
+
+    const box = document.createElement('div');
+    box.className = 'notification';
+
+    const message = document.createElement('p');
+    message.className = 'notification-text';
+    message.textContent = text;
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'notification-btn';
+    button.textContent = 'Окей';
+    button.addEventListener('click', () => overlay.remove());
+
+    box.append(message, button);
+    overlay.append(box);
+    document.body.append(overlay);
+  }
+
+  function getMissingMessage() {
+    const hasSoup = selected.soup !== null;
+    const hasMain = selected.main !== null;
+    const hasSalad = selected.salad !== null;
+    const hasDrink = selected.drink !== null;
+    const hasDessert = selected.dessert !== null;
+
+    if (!hasSoup && !hasMain && !hasSalad && !hasDrink && !hasDessert) {
+      return 'Ничего не выбрано. Выберите блюда для заказа';
+    }
+
+    if (hasMain || (hasSoup && hasSalad)) {
+      if (!hasDrink) return 'Выберите напиток';
+      return null;
+    }
+
+    if (hasSoup) return 'Выберите главное блюдо/салат/стартер';
+    if (hasSalad) return 'Выберите суп или главное блюдо';
+    return 'Выберите главное блюдо';
+  }
+
+  form.addEventListener('submit', (e) => {
+    const message = getMissingMessage();
+    if (message !== null) {
+      e.preventDefault();
+      showNotification(message);
     }
   });
 
