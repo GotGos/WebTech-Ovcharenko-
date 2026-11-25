@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оформить заказ — БизнесПанч</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lunch.css">
+<link rel="stylesheet" href="print.css" media="print">
+</head>
+<body>
+
+  <header>
+    <h1><a href="index.html">Бизнес<span>Панч</span></a></h1>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="lunch.html">Собрать ланч</a>
+      <a href="checkout.html" class="active">Оформить заказ</a>
+      <a href="index.html#about">О компании</a>
+      <a href="feedback.html">Обратная связь</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="dish-section" id="composition">
+      <h2>Состав заказа</h2>
+      <p class="empty-order" id="order-empty" hidden>Ничего не выбрано. Чтобы добавить блюда в заказ, перейдите на страницу <a href="lunch.html">Собрать ланч</a>.</p>
+      <div class="dishes-grid" id="order-dishes" hidden></div>
+    </section>
+
+    <section class="order" id="order">
+      <h2>Оформление заказа</h2>
+
+      <form class="order-form" id="order-form">
+        <div class="order-columns">
+
+          <div class="order-col">
+            <h3>Ваш заказ</h3>
+
+            <div class="summary">
+              <div class="pick-group" data-category="soup">
+                <span class="pick-title">Суп</span>
+                <p class="pick-empty">Не выбран</p>
+                <p class="pick" hidden><span class="pick-text"></span><span class="pick-price"></span></p>
+              </div>
+              <div class="pick-group" data-category="main">
+                <span class="pick-title">Главное блюдо</span>
+                <p class="pick-empty">Не выбрано</p>
+                <p class="pick" hidden><span class="pick-text"></span><span class="pick-price"></span></p>
+              </div>
+              <div class="pick-group" data-category="salad">
+                <span class="pick-title">Салат или стартер</span>
+                <p class="pick-empty">Не выбран</p>
+                <p class="pick" hidden><span class="pick-text"></span><span class="pick-price"></span></p>
+              </div>
+              <div class="pick-group" data-category="drink">
+                <span class="pick-title">Напиток</span>
+                <p class="pick-empty">Не выбран</p>
+                <p class="pick" hidden><span class="pick-text"></span><span class="pick-price"></span></p>
+              </div>
+              <div class="pick-group" data-category="dessert">
+                <span class="pick-title">Десерт</span>
+                <p class="pick-empty">Не выбран</p>
+                <p class="pick" hidden><span class="pick-text"></span><span class="pick-price"></span></p>
+              </div>
+              <p class="summary-total" hidden>Стоимость заказа: <span class="total-sum">0 ₽</span></p>
+            </div>
+
+            <div class="field">
+              <label for="comment">Комментарии к заказу</label>
+              <textarea id="comment" name="comment" rows="6"></textarea>
+            </div>
+          </div>
+
+          <div class="order-col">
+            <h3>Ваши данные</h3>
+
+            <div class="field">
+              <label for="name">Имя</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <label class="checkbox-option">
+              <input type="checkbox" name="promo" value="yes" checked>
+              Получать информацию о скидках и акциях
+            </label>
+
+            <div class="field">
+              <label for="phone">Номер телефона</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="field">
+              <label for="address">Адрес доставки</label>
+              <input type="text" id="address" name="address" required>
+              <p class="hint">Доставка осуществляется только по Москве</p>
+            </div>
+
+            <fieldset class="field">
+              <legend>Время доставки:</legend>
+              <label class="radio-option"><input type="radio" name="delivery" value="asap" checked>Как можно скорее</label>
+              <label class="radio-option"><input type="radio" name="delivery" value="scheduled">К указанному времени</label>
+            </fieldset>
+
+            <div class="field">
+              <label for="delivery-time">Укажите время доставки</label>
+              <input type="time" id="delivery-time" name="delivery_time" min="09:00" max="16:00">
+              <p class="hint">Доступное время доставки с 9:00 до 16:00</p>
+            </div>
+
+            <div class="form-buttons">
+              <button type="reset" class="btn btn-reset">Сбросить</button>
+              <button type="submit" class="btn btn-submit">Отправить</button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer id="contacts">
+    <div>
+      <h2>Контакты</h2>
+      <p>ООО «БизнесПанч», г. Москва, ул. Пятницкая, д. 12</p>
+      <p>Ежедневно с 9:00 до 16:00, доставка по будням</p>
+    </div>
+    <div>
+      <h2>Связаться</h2>
+      <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+      <p><a href="mailto:order@businesspunch.ru">order@businesspunch.ru</a></p>
+      <p><a href="feedback.html">Обратная связь</a></p>
+      <p><a href="login.html">Вход для сотрудников</a></p>
+    </div>
+    <p class="footer-copy">© 2026 БизнесПанч. Все права защищены.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="dishes.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

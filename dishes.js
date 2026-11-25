@@ -123,3 +123,5 @@ async function loadDishes() {
   }
   return dishes;
 }
+
+const dishesReady = loadDishes();

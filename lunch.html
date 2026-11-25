@@ -18,6 +18,7 @@
     <nav>
       <a href="index.html">Главная</a>
       <a href="lunch.html" class="active">Собрать ланч</a>
+      <a href="checkout.html">Оформить заказ</a>
       <a href="index.html#about">О компании</a>
       <a href="feedback.html">Обратная связь</a>
       <a href="#contacts">Контакты</a>
@@ -152,101 +153,11 @@
       <div class="dishes-grid" data-category="dessert"></div>
     </section>
 
-    <section class="order" id="order">
-      <h2>Сделать заказ</h2>
-
-      <form class="order-form" id="order-form" action="https://httpbin.org/post" method="POST">
-        <div class="order-columns">
-
-          <div class="order-col">
-            <h3>Ваш заказ</h3>
-
-            <div class="summary">
-              <p class="pick-empty summary-empty">Ничего не выбрано</p>
-              <div class="pick-group" data-category="soup" hidden>
-                <span class="pick-title">Суп</span>
-                <p class="pick-empty">Блюдо не выбрано</p>
-                <p class="pick" hidden><span class="pick-text"></span><button type="button" class="remove">Убрать</button></p>
-              </div>
-              <div class="pick-group" data-category="main" hidden>
-                <span class="pick-title">Главное блюдо</span>
-                <p class="pick-empty">Блюдо не выбрано</p>
-                <p class="pick" hidden><span class="pick-text"></span><button type="button" class="remove">Убрать</button></p>
-              </div>
-              <div class="pick-group" data-category="salad" hidden>
-                <span class="pick-title">Салат или стартер</span>
-                <p class="pick-empty">Блюдо не выбрано</p>
-                <p class="pick" hidden><span class="pick-text"></span><button type="button" class="remove">Убрать</button></p>
-              </div>
-              <div class="pick-group" data-category="drink" hidden>
-                <span class="pick-title">Напиток</span>
-                <p class="pick-empty">Напиток не выбран</p>
-                <p class="pick" hidden><span class="pick-text"></span><button type="button" class="remove">Убрать</button></p>
-              </div>
-              <div class="pick-group" data-category="dessert" hidden>
-                <span class="pick-title">Десерт</span>
-                <p class="pick-empty">Блюдо не выбрано</p>
-                <p class="pick" hidden><span class="pick-text"></span><button type="button" class="remove">Убрать</button></p>
-              </div>
-              <p class="summary-total" hidden>Стоимость заказа: <span class="total-sum">0 ₽</span></p>
-            </div>
-
-            <div class="field">
-              <label for="comment">Комментарии к заказу</label>
-              <textarea id="comment" name="comment" rows="6"></textarea>
-            </div>
-          </div>
-
-          <div class="order-col">
-            <h3>Ваши данные</h3>
-
-            <div class="field">
-              <label for="name">Имя</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-
-            <label class="checkbox-option">
-              <input type="checkbox" name="promo" value="yes" checked>
-              Получать информацию о скидках и акциях
-            </label>
-
-            <div class="field">
-              <label for="phone">Номер телефона</label>
-              <input type="tel" id="phone" name="phone" required>
-            </div>
-
-            <div class="field">
-              <label for="address">Адрес доставки</label>
-              <input type="text" id="address" name="address" required>
-              <p class="hint">Доставка осуществляется только по Москве</p>
-            </div>
-
-            <fieldset class="field">
-              <legend>Время доставки:</legend>
-              <label class="radio-option"><input type="radio" name="delivery" value="asap" checked>Как можно скорее</label>
-              <label class="radio-option"><input type="radio" name="delivery" value="scheduled">К указанному времени</label>
-            </fieldset>
-
-            <div class="field">
-              <label for="delivery-time">Укажите время доставки</label>
-              <input type="time" id="delivery-time" name="delivery_time" min="09:00" max="16:00">
-              <p class="hint">Доступное время доставки с 9:00 до 16:00</p>
-            </div>
-
-            <div class="form-buttons">
-              <button type="reset" class="btn btn-reset">Сбросить</button>
-              <button type="submit" class="btn btn-submit">Отправить</button>
-            </div>
-          </div>
-
-        </div>
-      </form>
-    </section>
+    <div class="checkout-panel" id="checkout-panel" hidden>
+      <p class="checkout-total">Стоимость заказа: <span id="panel-total">0 ₽</span></p>
+      <p class="checkout-hint" id="panel-hint" hidden></p>
+      <a class="checkout-link disabled" id="checkout-link" aria-disabled="true">Перейти к оформлению</a>
+    </div>
 
   </main>
 
@@ -266,6 +177,7 @@
     <p class="footer-copy">© 2026 БизнесПанч. Все права защищены.</p>
   </footer>
 
+  <script src="common.js"></script>
   <script src="dishes.js"></script>
   <script src="display.js"></script>
   <script src="filter.js"></script>

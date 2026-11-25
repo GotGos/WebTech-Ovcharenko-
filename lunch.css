@@ -116,21 +116,6 @@
     background-color: #F1EEE9;
 }
 
-.remove {
-    font-size: 14px;
-    color: #6E6E6E;
-    padding: 0;
-    border: none;
-    background: none;
-    font-family: inherit;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.remove:hover {
-    color: tomato;
-}
-
 .summary-total {
     margin: 0;
     padding-top: 12px;
@@ -313,4 +298,67 @@
 .notification-btn:hover {
     background-color: tomato;
     color: #FFFFFF;
+}
+
+.pick-price {
+    white-space: nowrap;
+}
+
+.empty-order {
+    margin: 0;
+    font-size: 18px;
+}
+
+.empty-order a {
+    color: #C9381F;
+}
+
+.checkout-panel {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 30px;
+    padding: 16px 6vw;
+    background-color: #222222;
+    color: #FFFFFF;
+}
+
+.checkout-total,
+.checkout-hint {
+    margin: 0;
+}
+
+.checkout-total {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.checkout-hint {
+    font-size: 14px;
+    color: #D8D8D8;
+}
+
+.checkout-link {
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: tomato;
+    color: #111111;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.checkout-link:hover {
+    background-color: #C9381F;
+    color: #FFFFFF;
+}
+
+.checkout-link.disabled {
+    background-color: #555555;
+    color: #999999;
+    cursor: not-allowed;
+    pointer-events: none;
 }
